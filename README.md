@@ -1,36 +1,228 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Prakash Portfolio
 
-## Getting Started
+A premium, motion-first personal portfolio built to showcase my work as a **Frontend Engineer** focused on **React, Next.js, React Native, UI Systems, and Web3 product experiences**.
 
-First, run the development server:
+This portfolio is designed as a polished product experience — not just a static profile site — with emphasis on **performance, clarity, visual storytelling, and engineering quality**.
+
+## Live Website
+
+🔗 [hprakash.vercel.app](https://hprakash.vercel.app)
+
+---
+
+## Overview
+
+This portfolio highlights my work across:
+
+- Frontend engineering
+- Cross-platform product development
+- Mobile application interfaces
+- Web3 & wallet-integrated platforms
+- Motion-driven UI systems
+- Performance-focused modern web experiences
+
+It is built to reflect the way I think about products:
+**clean architecture, meaningful interactions, strong UX, and production-ready delivery.**
+
+---
+
+## Tech Stack
+
+### Core
+- **Next.js**
+- **React**
+- **TypeScript**
+- **TailwindCSS**
+- **Zustand**
+
+### UI / Motion
+- **Framer Motion**
+- **Lucide Icons**
+- **Custom animated UI components**
+
+### Tooling
+- **ESLint**
+- **Prettier**
+- **Vercel**
+- **GitHub**
+
+---
+
+## Key Features
+
+- Modern premium **dark-mode portfolio experience**
+- Smooth **micro-interactions and motion transitions**
+- Fully responsive layout across desktop, tablet, and mobile
+- Structured **experience timeline**
+- Featured **project showcase with case-study modals**
+- Clean **engineering toolkit / stack presentation**
+- UI philosophy / design thinking section
+- Optimized **contact and hiring CTA**
+- Downloadable resume integration
+- Performance-first implementation
+
+---
+
+## Featured Work Included
+
+This portfolio showcases selected work across:
+
+- **TADA Rider & Driver Apps**
+- **Musubi**
+- **TADA Mini / DePIN**
+- **Validator Dashboards**
+- **Zeeve Mobile App**
+- **NFT Chain Wallet App**
+
+Each project is presented with:
+- product context
+- contribution summary
+- outcome / impact
+- tech stack used
+
+---
+
+## Design Philosophy
+
+This portfolio was intentionally built with a **product mindset** rather than a template mindset.
+
+### Focus Areas:
+- Strong visual hierarchy
+- Premium dark UI aesthetics
+- Minimal but expressive motion
+- Fast interaction feel
+- Readable developer-first storytelling
+- Clean section transitions
+- Scalable reusable component structure
+
+The goal was to create a portfolio that feels like a **modern digital product**, while still being useful for:
+- recruiters
+- hiring managers
+- engineering leads
+- founders
+- collaborators
+
+---
+
+## Performance Goals
+
+This project was built with focus on:
+
+- lightweight frontend architecture
+- clean component separation
+- reusable UI patterns
+- responsive rendering
+- smooth animation performance
+- maintainable styling system
+
+---
+
+## Project Structure
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+src/
+  app/
+  components/
+  sections/
+  data/
+  hooks/
+  store/
+  lib/
+  utils/
+  styles/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> Structure may vary slightly depending on future updates and feature additions.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Local Development
 
-## Learn More
+### Clone the repository
+```bash
+git clone https://github.com/Prakash080/prakash-portfolio.git
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Navigate into the project
+```bash
+cd prakash-portfolio
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Install dependencies
+```bash
+npm install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Run development server
+```bash
+npm run dev
+```
 
-## Deploy on Vercel
+Open [http://localhost:3000](http://localhost:3000) to view it locally.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+This portfolio is deployed on **Vercel** for fast and seamless production delivery.
+
+### Production URL
+🔗 [https://hprakash.vercel.app](https://hprakash.vercel.app)
+
+---
+
+## Why I Built This
+
+I wanted my portfolio to reflect the kind of work I enjoy building:
+
+- polished frontend products
+- strong UI systems
+- scalable React / Next.js architecture
+- mobile-friendly experiences
+- thoughtful interaction design
+
+This project also serves as a living space to continuously improve:
+- frontend craftsmanship
+- design thinking
+- storytelling through engineering work
+
+---
+
+## About Me
+
+I’m a **Frontend Engineer** with experience building:
+
+- production web apps
+- mobile applications
+- ride-hailing interfaces
+- Web3 dashboards
+- wallet-integrated platforms
+- cross-platform UI systems
+
+Currently focused on:
+- **React**
+- **Next.js**
+- **React Native**
+- **TypeScript**
+- **TailwindCSS**
+- **Zustand**
+- **UI architecture**
+- **performance-driven product development**
+
+---
+
+## Connect With Me
+
+- **Portfolio:** [hprakash.vercel.app](https://hprakash.vercel.app)
+- **LinkedIn:** [linkedin.com/in/prakash080](https://www.linkedin.com/in/prakash080/)
+- **GitHub:** [github.com/Prakash080](https://github.com/Prakash080)
+- **Email:** hprakash080@gmail.com
+
+---
+
+## License
+
+This project is licensed under the **MIT License**.
+
+> Feel free to explore the code for learning and inspiration.  
+> Please do not copy the full design, branding, or personal content directly.

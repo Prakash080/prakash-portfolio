@@ -1,17 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight, Download, Mail, MapPin, Zap, Globe } from "lucide-react";
 import { staggerContainer, fadeUp, textReveal } from "@/animations/variants";
+import { scrollToSection, RESUME_PATH } from "@/lib/utils";
 
 const SKILLS = ["React", "Next.js", "React Native", "Flutter", "TailwindCSS", "TypeScript", "Zustand", "Web3"];
-
-function scrollToSection(id: string) {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-}
 
 function SpotlightCursor() {
   const x = useMotionValue(0);
@@ -20,6 +16,7 @@ function SpotlightCursor() {
   const springY = useSpring(y, { stiffness: 80, damping: 20 });
 
   useEffect(() => {
+    if (window.matchMedia("(pointer: coarse)").matches) return;
     const move = (e: MouseEvent) => { x.set(e.clientX); y.set(e.clientY); };
     window.addEventListener("mousemove", move);
     return () => window.removeEventListener("mousemove", move);
@@ -124,7 +121,7 @@ function ProfileImage() {
 
         {/* Floating badge — top right, inside image */}
         <motion.div
-          className="absolute top-3 right-3 flex items-center gap-2 px-3 py-1.5 rounded-lg border border-green-500/25 shadow-md shadow-black/30"
+          className="absolute top-3 right-3 flex items-center gap-1.5 sm:gap-2 px-2 py-1 sm:px-3 sm:py-1.5 rounded-lg border border-green-500/25 shadow-md shadow-black/30"
           style={{ background: "rgba(8, 10, 15, 0.1)", backdropFilter: "blur(10px)" }}
           initial={{ opacity: 0, x: 12, scale: 0.9 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -132,24 +129,24 @@ function ProfileImage() {
           whileHover={{ y: -2 }}
         >
           <div className="relative shrink-0">
-            <span className="block w-2 h-2 rounded-full bg-green-400" />
+            <span className="block w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-400" />
             <span className="absolute inset-0 rounded-full bg-green-400 animate-ping opacity-60" />
           </div>
-          <span className="text-xs font-semibold text-white tracking-wide">Open to work</span>
+          <span className="text-[10px] sm:text-xs font-semibold text-white tracking-wide">Open to work</span>
         </motion.div>
 
         {/* Floating badge — bottom left, inside image */}
         <motion.div
-          className="absolute bottom-3 left-3 px-4 py-3 rounded-xl border border-cyan-500/25 shadow-lg shadow-black/40"
+          className="absolute bottom-3 left-3 px-2.5 py-2 sm:px-4 sm:py-3 rounded-xl border border-cyan-500/25 shadow-lg shadow-black/40"
           style={{ background: "rgba(8, 10, 15, 0.3)", backdropFilter: "blur(12px)" }}
           initial={{ opacity: 0, x: -12, scale: 0.9 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
           transition={{ delay: 1.2, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           whileHover={{ y: -2 }}
         >
-          <p className="text-[10px] uppercase tracking-widest text-zinc-400 mb-1">Building Products</p>
-          <p className="text-lg font-bold text-white leading-none">5+ <span className="text-cyan-400">Years</span></p>
-          <p className="text-[10px] text-zinc-400 mt-0.5">Frontend • Mobile • Web3</p>
+          <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-400 mb-0.5 sm:mb-1">Building Products</p>
+          <p className="text-sm sm:text-lg font-bold text-white leading-none">5+ <span className="text-cyan-400">Years</span></p>
+          <p className="text-[9px] sm:text-[10px] text-zinc-400 mt-0.5">Frontend • Mobile • Web3</p>
         </motion.div>
       </div>
     </motion.div>
@@ -158,7 +155,6 @@ function ProfileImage() {
 
 export function HeroSection() {
   const [skillIndex, setSkillIndex] = useState(0);
-  const containerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -170,7 +166,6 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      ref={containerRef}
       className="relative min-h-screen flex flex-col justify-center overflow-hidden"
     >
       <SpotlightCursor />
@@ -285,7 +280,7 @@ export function HeroSection() {
                 <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
               </button>
               <a
-                href="/Prakash_H_Resume_2026.pdf"
+                href={RESUME_PATH}
                 download
                 className="flex items-center gap-2 px-5 py-3 rounded-xl glass border border-white/10 text-sm font-medium text-zinc-300 hover:text-white hover:border-white/20 transition-all"
               >

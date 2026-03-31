@@ -2,7 +2,7 @@ export interface ProjectMetadata {
   role: string;
   platform: string;
   status: string;
-  extra?: string; // e.g. "Regions: Singapore, USA, Cambodia" or "Market: Japan"
+  extra?: { label: string; value: string };
 }
 
 export interface Project {
@@ -49,6 +49,16 @@ export interface TechItem {
   level: "expert" | "advanced" | "proficient";
   icon?: string;
   color: string;
+}
+
+export interface OtherWork {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  tags: string[];
+  gradient: string;
+  icon: string;
 }
 
 export type SectionId =

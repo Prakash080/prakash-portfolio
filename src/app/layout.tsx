@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Prakash H", url: "https://github.com/Prakash080" }],
   creator: "Prakash H",
-  metadataBase: new URL("https://prakash-portfolio.vercel.app"),
+  metadataBase: new URL("https://hprakash.vercel.app"),
   openGraph: {
     type: "website",
     locale: "en_US",

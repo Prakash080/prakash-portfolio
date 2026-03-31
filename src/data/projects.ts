@@ -1,4 +1,4 @@
-import { Project } from "@/types";
+import { Project, OtherWork } from "@/types";
 
 export const projects: Project[] = [
   {
@@ -17,7 +17,7 @@ export const projects: Project[] = [
       role: "Front-end Engineer",
       platform: "Mobile",
       status: "Live",
-      extra: "Regions: Singapore, USA, Cambodia",
+      extra: { label: "Regions", value: "Singapore, USA, Cambodia" },
     },
     whatItIs:
       "A production ride-hailing application built for real users across multiple regions, enabling booking, ride tracking, payments, and real-time trip experiences at scale.",
@@ -57,7 +57,7 @@ export const projects: Project[] = [
       role: "Front-end Engineer",
       platform: "Mobile",
       status: "Live",
-      extra: "Regions: Singapore, USA, Cambodia",
+      extra: { label: "Regions", value: "Singapore, USA, Cambodia" },
     },
     whatItIs:
       "A driver-facing production application that helps drivers accept bookings, manage trips, track earnings, and operate efficiently across supported regions.",
@@ -97,7 +97,7 @@ export const projects: Project[] = [
       role: "Front-end Engineer",
       platform: "Web",
       status: "Live",
-      extra: "Market: Japan",
+      extra: { label: "Market", value: "Japan" },
     },
     whatItIs:
       "A Japan-focused fintech and Web3 product combining modern financial workflows with tokenized experiences, digital asset interactions, and secure user onboarding.",
@@ -136,7 +136,7 @@ export const projects: Project[] = [
       role: "Front-end Engineer",
       platform: "Web / Mobile-first",
       status: "In Progress",
-      extra: "Internal / Experimental",
+      extra: { label: "Stage", value: "Internal / Experimental" },
     },
     whatItIs:
       "A lightweight product surface built around modular interaction flows, optimized for emerging decentralized infrastructure and mobile-first use cases.",
@@ -175,7 +175,7 @@ export const projects: Project[] = [
       role: "Front-end Engineer",
       platform: "Web",
       status: "Production",
-      extra: "Ecosystems: Polygon, Arbitrum, Optimism",
+      extra: { label: "Ecosystems", value: "Polygon, Arbitrum, Optimism" },
     },
     whatItIs:
       "A suite of dashboards built for blockchain infrastructure products, enabling users to monitor validators, staking systems, and chain operations across multiple ecosystems.",
@@ -201,7 +201,7 @@ export const projects: Project[] = [
   },
 ];
 
-export const otherWork = [
+export const otherWork: OtherWork[] = [
   {
     id: "zeeve-mobile",
     title: "Zeeve Mobile App",

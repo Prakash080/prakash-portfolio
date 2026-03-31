@@ -7,13 +7,14 @@ import { staggerContainer, fadeUp } from "@/animations/variants";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { experiences } from "@/data/experience";
 import { cn } from "@/lib/utils";
+import { Experience } from "@/types";
 
 function ExperienceCard({
   exp,
   isOpen,
   onToggle,
 }: {
-  exp: (typeof experiences)[0];
+  exp: Experience;
   isOpen: boolean;
   onToggle: () => void;
 }) {
@@ -34,6 +35,7 @@ function ExperienceCard({
           onClick={onToggle}
           className="w-full text-left p-6"
           aria-expanded={isOpen}
+          aria-controls={`exp-content-${exp.id}`}
         >
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1 min-w-0">
@@ -90,6 +92,9 @@ function ExperienceCard({
         <AnimatePresence initial={false}>
           {isOpen && (
             <motion.div
+              id={`exp-content-${exp.id}`}
+              role="region"
+              aria-label={`${exp.company} details`}
               key="content"
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}

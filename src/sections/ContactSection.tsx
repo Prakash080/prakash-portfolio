@@ -2,19 +2,24 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Copy, Check, ExternalLink, MessageSquare, Download } from "lucide-react";
+import { Mail, Copy, Check, ArrowUpRight, MessageSquare, Download } from "lucide-react";
 import { GitHubIcon } from "@/components/common/GitHubIcon";
 import { LinkedInIcon } from "@/components/common/LinkedInIcon";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { staggerContainer, fadeUp } from "@/animations/variants";
+import { RESUME_PATH } from "@/lib/utils";
 
 function CopyButton({ text }: { text: string }) {
   const [copied, setCopied] = useState(false);
 
-  function handleCopy() {
-    navigator.clipboard.writeText(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  async function handleCopy() {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Clipboard API unavailable or permission denied — silently no-op
+    }
   }
 
   return (
@@ -127,7 +132,7 @@ export function ContactSection() {
               Send Email
             </a>
             <a
-              href="/Prakash_H_Resume_2026.pdf"
+              href={RESUME_PATH}
               download
               className="flex items-center gap-2 px-5 py-3 rounded-xl glass border border-white/10 text-zinc-300 text-sm font-medium hover:text-white transition-all"
             >
@@ -176,7 +181,7 @@ export function ContactSection() {
                   className="p-1.5 rounded-lg glass text-zinc-500 hover:text-white transition-colors"
                   aria-label={`Open ${link.label}`}
                 >
-                  <ExternalLink size={20} />
+                  {link.href.startsWith("mailto") ? <Mail size={20} /> : <ArrowUpRight size={20} />}
                 </a>
               </div>
             </motion.div>

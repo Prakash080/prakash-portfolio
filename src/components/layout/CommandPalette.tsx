@@ -6,14 +6,17 @@ import { Search, Terminal, ArrowRight, User, Briefcase, Code2, Mail, Download } 
 import { GitHubIcon } from "@/components/common/GitHubIcon";
 import { LinkedInIcon } from "@/components/common/LinkedInIcon";
 import { useUIStore } from "@/store";
+import { scrollToSection, RESUME_PATH } from "@/lib/utils";
+import { useScrollLock } from "@/hooks/useScrollLock";
 
 interface Command {
   id: string;
   label: string;
   icon: ReactNode;
   section: string | null;
-  type: "navigation" | "action" | "link";
+  type: "navigation" | "link";
   href?: string;
+  download?: boolean;
 }
 
 const iconCls = "shrink-0 text-cyan-500/70";
@@ -26,18 +29,15 @@ const COMMANDS: Command[] = [
   { id: "stack",      label: "Tech Stack",      icon: <Terminal  size={14} className={iconCls} />, section: "stack",      type: "navigation" },
   { id: "about",      label: "About Prakash",   icon: <User      size={14} className={iconCls} />, section: "about",      type: "navigation" },
   { id: "contact",    label: "Contact / Hire",  icon: <Mail      size={14} className={iconCls} />, section: "contact",    type: "navigation" },
-  { id: "resume",     label: "Download Resume", icon: <Download  size={14} className={iconCls} />, section: null,         type: "action"     },
+  { id: "resume",     label: "Download Resume", icon: <Download  size={14} className={iconCls} />, section: null, type: "link", href: RESUME_PATH, download: true },
   { id: "github",     label: "View GitHub",     icon: <GitHubIcon   className={iconCls} style={svgSize} />, section: null, type: "link", href: "https://github.com/Prakash080"        },
   { id: "linkedin",   label: "View LinkedIn",   icon: <LinkedInIcon className={iconCls} style={svgSize} />, section: null, type: "link", href: "https://linkedin.com/in/prakash080"  },
 ];
 
-function scrollToSection(id: string) {
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-}
-
 export function CommandPalette() {
-  const open    = useUIStore((s) => s.commandPaletteOpen);
-  const setOpen = useUIStore((s) => s.setCommandPaletteOpen);
+  const open           = useUIStore((s) => s.commandPaletteOpen);
+  const setOpen        = useUIStore((s) => s.setCommandPaletteOpen);
+  const togglePalette  = useUIStore((s) => s.toggleCommandPalette);
   const [query,    setQuery]    = useState("");
   const [selected, setSelected] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -46,35 +46,25 @@ export function CommandPalette() {
     c.label.toLowerCase().includes(query.toLowerCase())
   );
 
-  // Focus, reset, and scroll lock on open
+  useScrollLock(open);
+
+  // Focus and reset on open
   useEffect(() => {
     if (!open) return;
     setTimeout(() => inputRef.current?.focus(), 50);
     setQuery("");
     setSelected(0);
-    // Lock scroll on both html and body — body { overflow-x: hidden } in globals
-    // causes html to be the actual scroll root, so we must lock both
-    const html = document.documentElement;
-    const body = document.body;
-    const prevHtml = html.style.overflow;
-    const prevBody = body.style.overflow;
-    html.style.overflow = "hidden";
-    body.style.overflow = "hidden";
-    return () => {
-      html.style.overflow = prevHtml;
-      body.style.overflow = prevBody;
-    };
   }, [open]);
 
   // Global ⌘K / Escape
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === "k") { e.preventDefault(); setOpen(!open); }
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") { e.preventDefault(); togglePalette(); }
       if (e.key === "Escape") setOpen(false);
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [open, setOpen]);
+  }, [togglePalette, setOpen]);
 
   // Arrow navigation + Enter
   useEffect(() => {
@@ -92,13 +82,15 @@ export function CommandPalette() {
   function executeCommand(cmd: Command) {
     if (cmd.type === "navigation" && cmd.section) {
       scrollToSection(cmd.section);
-    } else if (cmd.type === "action" && cmd.id === "resume") {
-      const a = document.createElement("a");
-      a.href = "/Prakash_H_Resume_2026.pdf";
-      a.download = "Prakash_H_Resume_2026.pdf";
-      a.click();
     } else if (cmd.type === "link" && cmd.href) {
-      window.open(cmd.href, "_blank");
+      if (cmd.download) {
+        const a = document.createElement("a");
+        a.href = cmd.href;
+        a.download = "";
+        a.click();
+      } else {
+        window.open(cmd.href, "_blank");
+      }
     }
     setOpen(false);
   }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ExternalLink,
@@ -10,6 +10,8 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { staggerContainer, scaleIn, fadeUp } from "@/animations/variants";
+import { useScrollLock } from "@/hooks/useScrollLock";
+import { OtherWork } from "@/types";
 import { SectionHeader } from "@/components/common/SectionHeader";
 import { projects, otherWork } from "@/data/projects";
 import { Project } from "@/types";
@@ -58,18 +60,7 @@ function MetaChip({ label, value }: { label: string; value: string }) {
 function ProjectModal({ project, onClose }: { project: Project; onClose: () => void }) {
   const isPlayStore = project.liveUrl?.includes("play.google.com");
 
-  useEffect(() => {
-    const html = document.documentElement;
-    const body = document.body;
-    const prevHtml = html.style.overflow;
-    const prevBody = body.style.overflow;
-    html.style.overflow = "hidden";
-    body.style.overflow = "hidden";
-    return () => {
-      html.style.overflow = prevHtml;
-      body.style.overflow = prevBody;
-    };
-  }, []);
+  useScrollLock(true);
 
   return (
     <AnimatePresence>
@@ -123,8 +114,8 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
               <MetaChip label="Status" value={project.metadata.status} />
               {project.metadata.extra && (
                 <MetaChip
-                  label={project.metadata.extra.split(":")[0].trim()}
-                  value={project.metadata.extra.split(":").slice(1).join(":").trim()}
+                  label={project.metadata.extra.label}
+                  value={project.metadata.extra.value}
                 />
               )}
             </div>
@@ -274,7 +265,7 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: () => vo
 
 // ─── Other work item ──────────────────────────────────────────────────────────
 
-function OtherWorkItem({ item }: { item: typeof otherWork[0] }) {
+function OtherWorkItem({ item }: { item: OtherWork }) {
   return (
     <motion.div
       variants={fadeUp}
@@ -321,7 +312,8 @@ export function ProjectsSection() {
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
         variants={staggerContainer}
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-60px" }}
       >
         {projects.map((project) => (
           <ProjectCard

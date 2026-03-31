@@ -6,7 +6,7 @@ import { Menu, X, Terminal, Download } from "lucide-react";
 import Image from "next/image";
 import { useUIStore } from "@/store";
 import { SectionId } from "@/types";
-import { cn } from "@/lib/utils";
+import { cn, scrollToSection, RESUME_PATH } from "@/lib/utils";
 
 const NAV_ITEMS: { label: string; id: SectionId }[] = [
   { label: "Experience", id: "experience" },
@@ -15,10 +15,6 @@ const NAV_ITEMS: { label: string; id: SectionId }[] = [
   { label: "About",      id: "about"      },
   { label: "Contact",    id: "contact"    },
 ];
-
-function scrollToSection(id: string) {
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-}
 
 /** Thin animated progress bar at the very top of the viewport */
 function ScrollProgressBar() {
@@ -133,7 +129,7 @@ export function Navbar() {
             </button>
 
             <a
-              href="/Prakash_H_Resume_2026.pdf"
+              href={RESUME_PATH}
               download
               className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 hover:bg-cyan-500/20 text-xs font-medium transition-all"
             >
@@ -200,7 +196,7 @@ export function Navbar() {
               </ul>
 
               <a
-                href="/Prakash_H_Resume_2026.pdf"
+                href={RESUME_PATH}
                 download
                 className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-medium"
               >

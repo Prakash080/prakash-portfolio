@@ -33,16 +33,22 @@ export function useActiveSection(sectionIds: SectionId[]) {
       return bestId;
     }
 
+    let ticking = false;
     function onScroll() {
-      setActiveSection(getActiveId());
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        setActiveSection(getActiveId());
+        ticking = false;
+      });
     }
 
     // Set initial value
-    onScroll();
+    setActiveSection(getActiveId());
 
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  // sectionIds is defined as a module-level const — stable reference
+  // sectionIds is a stable array defined at the call site (page.tsx module level)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setActiveSection]);
 }
