@@ -75,10 +75,10 @@ This portfolio showcases selected work across:
 - **NFT Chain Wallet App**
 
 Each project is presented with:
-- product context
-- contribution summary
-- outcome / impact
-- tech stack used
+- Product context
+- Contribution summary
+- Outcome / Impact
+- Tech stack used
 
 ---
 
@@ -96,11 +96,11 @@ This portfolio was intentionally built with a **product mindset** rather than a 
 - Scalable reusable component structure
 
 The goal was to create a portfolio that feels like a **modern digital product**, while still being useful for:
-- recruiters
-- hiring managers
-- engineering leads
-- founders
-- collaborators
+- Recruiters
+- Hiring managers
+- Engineering leads
+- Founders
+- Collaborators
 
 ---
 
@@ -108,12 +108,12 @@ The goal was to create a portfolio that feels like a **modern digital product**,
 
 This project was built with focus on:
 
-- lightweight frontend architecture
-- clean component separation
-- reusable UI patterns
-- responsive rendering
-- smooth animation performance
-- maintainable styling system
+- Lightweight frontend architecture
+- Clean component separation
+- Reusable UI patterns
+- Responsive rendering
+- Smooth animation performance
+- Maintainable styling system
 
 ---
 
@@ -175,16 +175,16 @@ This portfolio is deployed on **Vercel** for fast and seamless production delive
 
 I wanted my portfolio to reflect the kind of work I enjoy building:
 
-- polished frontend products
-- strong UI systems
-- scalable React / Next.js architecture
-- mobile-friendly experiences
-- thoughtful interaction design
+- Polished frontend products
+- Strong UI systems
+- Scalable React / Next.js architecture
+- Mobile-friendly experiences
+- Thoughtful interaction design
 
 This project also serves as a living space to continuously improve:
-- frontend craftsmanship
-- design thinking
-- storytelling through engineering work
+- Frontend craftsmanship
+- Design thinking
+- Storytelling through engineering work
 
 ---
 
@@ -192,12 +192,12 @@ This project also serves as a living space to continuously improve:
 
 I’m a **Frontend Engineer** with experience building:
 
-- production web apps
-- mobile applications
-- ride-hailing interfaces
+- Production web apps
+- Mobile applications
+- Ride-hailing interfaces
 - Web3 dashboards
-- wallet-integrated platforms
-- cross-platform UI systems
+- Wallet-integrated platforms
+- Cross-platform UI systems
 
 Currently focused on:
 - **React**
