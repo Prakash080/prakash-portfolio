@@ -19,14 +19,14 @@ export function LoadingScreen() {
             clearInterval(timer);
             setTimeout(() => {
               setVisible(false);
-              setTimeout(() => setIsLoading(false), 500);
-            }, 200);
+              setTimeout(() => setIsLoading(false), 300);
+            }, 100);
             return 100;
           }
-          return p + Math.random() * 18 + 4;
+          return p + Math.random() * 30 + 12;
         });
-      }, 80);
-    }, 500);
+      }, 50);
+    }, 100);
     return () => {
       clearTimeout(delay);
       clearInterval(timer);

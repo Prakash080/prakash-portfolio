@@ -30,6 +30,7 @@ function ExperienceCard({
       >
         {/* Header — always visible */}
         <button
+          type="button"
           onClick={onToggle}
           className="w-full text-left p-6"
           aria-expanded={isOpen}
@@ -169,7 +170,15 @@ function ExperienceCard({
 }
 
 export function ExperienceSection() {
-  const [openId, setOpenId] = useState<string | null>("tada");
+  const [openIds, setOpenIds] = useState<Set<string>>(new Set(["tada"]));
+
+  function handleToggle(id: string) {
+    setOpenIds((prev) => {
+      const next = new Set(prev);
+      next.has(id) ? next.delete(id) : next.add(id);
+      return next;
+    });
+  }
 
   return (
     <section id="experience" className="section-padding max-w-7xl mx-auto">
@@ -191,7 +200,7 @@ export function ExperienceSection() {
           viewport={{ once: true, margin: "-60px" }}
         >
           {experiences.map((exp) => (
-            <div key={exp.id} className="relative">
+            <div key={exp.id} id={`exp-${exp.id}`} className="relative" style={{ scrollMarginTop: "88px" }}>
               {/* Timeline dot */}
               <div
                 className="hidden md:block absolute -left-10.75 top-8.5 w-3 h-3 rounded-full border-2 z-10"
@@ -205,8 +214,8 @@ export function ExperienceSection() {
 
               <ExperienceCard
                 exp={exp}
-                isOpen={openId === exp.id}
-                onToggle={() => setOpenId(openId === exp.id ? null : exp.id)}
+                isOpen={openIds.has(exp.id)}
+                onToggle={() => handleToggle(exp.id)}
               />
             </div>
           ))}

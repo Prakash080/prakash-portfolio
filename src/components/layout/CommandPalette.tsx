@@ -46,13 +46,24 @@ export function CommandPalette() {
     c.label.toLowerCase().includes(query.toLowerCase())
   );
 
-  // Focus & reset on open
+  // Focus, reset, and scroll lock on open
   useEffect(() => {
-    if (open) {
-      setTimeout(() => inputRef.current?.focus(), 50);
-      setQuery("");
-      setSelected(0);
-    }
+    if (!open) return;
+    setTimeout(() => inputRef.current?.focus(), 50);
+    setQuery("");
+    setSelected(0);
+    // Lock scroll on both html and body — body { overflow-x: hidden } in globals
+    // causes html to be the actual scroll root, so we must lock both
+    const html = document.documentElement;
+    const body = document.body;
+    const prevHtml = html.style.overflow;
+    const prevBody = body.style.overflow;
+    html.style.overflow = "hidden";
+    body.style.overflow = "hidden";
+    return () => {
+      html.style.overflow = prevHtml;
+      body.style.overflow = prevBody;
+    };
   }, [open]);
 
   // Global ⌘K / Escape
@@ -102,6 +113,7 @@ export function CommandPalette() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setOpen(false)}
+            onWheel={(e) => e.preventDefault()}
           />
           <motion.div
             className="fixed top-[20%] left-1/2 -translate-x-1/2 z-101 w-full max-w-xl mx-auto px-4"
@@ -109,10 +121,11 @@ export function CommandPalette() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -10 }}
             transition={{ duration: 0.15, ease: "easeOut" }}
+            onWheel={(e) => e.stopPropagation()}
           >
-            <div className="glass-strong rounded-2xl border border-white/10 overflow-hidden shadow-2xl">
+            <div className="glass-strong rounded-2xl border border-white/10 shadow-2xl flex flex-col overflow-hidden" style={{ maxHeight: "min(480px, 75vh)" }}>
               {/* Search input */}
-              <div className="flex items-center gap-3 px-4 py-3.5 border-b border-white/5">
+              <div className="flex items-center gap-3 px-4 py-3.5 border-b border-white/5 shrink-0">
                 <Search size={16} className="text-zinc-500 shrink-0" />
                 <input
                   ref={inputRef}
@@ -124,8 +137,8 @@ export function CommandPalette() {
                 <kbd className="text-xs text-zinc-600 font-mono bg-white/5 px-2 py-0.5 rounded">ESC</kbd>
               </div>
 
-              {/* Results */}
-              <div className="py-2 max-h-72 overflow-y-auto">
+              {/* Results — flex-1 min-h-0 is required for overflow-y-auto to work in a flex child */}
+              <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain py-2">
                 {filtered.length === 0 ? (
                   <p className="text-center text-zinc-600 text-sm py-6">No results</p>
                 ) : (
@@ -146,7 +159,7 @@ export function CommandPalette() {
                 )}
               </div>
 
-              <div className="px-4 py-2 border-t border-white/5 flex items-center gap-3 text-xs text-zinc-700">
+              <div className="px-4 py-2 border-t border-white/5 flex items-center gap-3 text-xs text-zinc-700 shrink-0">
                 <span>↑↓ navigate</span>
                 <span>↵ select</span>
                 <span>esc close</span>

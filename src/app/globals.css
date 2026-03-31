@@ -103,6 +103,13 @@
     overflow-x: hidden;
   }
 
+  button,
+  a,
+  [role="button"],
+  label[for] {
+    cursor: pointer;
+  }
+
   ::selection {
     background-color: rgba(110, 231, 247, 0.2);
     color: #6ee7f7;

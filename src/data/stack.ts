@@ -18,6 +18,7 @@ export const techStack: TechItem[] = [
   { name: "Ethers.js", category: "web3", level: "advanced", color: "#6340bc" },
   { name: "MetaMask SDK", category: "web3", level: "advanced", color: "#f5841f" },
   { name: "WalletConnect", category: "web3", level: "advanced", color: "#3b99fc" },
+  { name: "RainbowKit", category: "web3", level: "advanced", color: "#7c3aed" },
   { name: "NFT Systems", category: "web3", level: "proficient", color: "#a78bfa" },
   { name: "DeFi / Staking UI", category: "web3", level: "advanced", color: "#34d399" },
   // State
@@ -30,6 +31,8 @@ export const techStack: TechItem[] = [
   { name: "Git / GitHub", category: "tooling", level: "expert", color: "#f05032" },
   { name: "Vercel", category: "tooling", level: "advanced", color: "#ffffff" },
   { name: "Postman", category: "tooling", level: "advanced", color: "#ef5b25" },
+  { name: "GitLab", category: "tooling", level: "advanced", color: "#fc6d26" },
+  { name: "Jira", category: "tooling", level: "advanced", color: "#0052cc" },
   { name: "Circle-CI", category: "tooling", level: "proficient", color: "#343434" },
   // Backend
   { name: "Firebase", category: "backend", level: "advanced", color: "#ffca28" },

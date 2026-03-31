@@ -63,7 +63,7 @@ export function Navbar() {
 
       <motion.header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          "fixed top-0 left-0 right-0 z-55 transition-all duration-300",
           scrolled ? "py-3 glass border-b border-white/5" : "py-5 bg-transparent"
         )}
         initial={{ y: -80, opacity: 0 }}
@@ -80,7 +80,7 @@ export function Navbar() {
           >
             <div className="w-8 h-8 rounded-lg border border-cyan-500/40 overflow-hidden group-hover:border-cyan-500/80 transition-colors">
               <Image
-                src="/ph.png"
+                src="/icon.svg"
                 alt="Prakash H"
                 width={32}
                 height={32}
@@ -143,7 +143,7 @@ export function Navbar() {
 
             <button
               onClick={toggleMobileNav}
-              className="md:hidden p-2 text-zinc-400 hover:text-white transition-colors"
+              className="md:hidden p-2 text-zinc-400 hover:text-white transition-colors relative z-60"
               aria-label="Toggle menu"
             >
               <AnimatePresence mode="wait" initial={false}>

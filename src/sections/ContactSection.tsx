@@ -96,22 +96,20 @@ export function ContactSection() {
 
           <div>
             <h3 className="text-2xl font-bold text-white mb-3">
-              Hire me or <span className="text-cyan-400">collaborate</span>
+              Open to <span className="text-cyan-400">Frontend & Product</span> Opportunities
             </h3>
             <p className="text-zinc-500 leading-relaxed">
-              Whether you&apos;re building a new product, scaling an existing platform, or looking
-              for a frontend specialist with Web3 and mobile experience — I&apos;d love to hear
-              from you.
+              I’m currently open to frontend engineering roles, product collaborations, and teams building thoughtful digital experiences. If you&apos;re working on scalable web products, mobile apps, or modern user-facing platforms - I’d be happy to connect.
             </p>
           </div>
 
           <ul className="flex flex-col gap-2">
             {[
-              "React / Next.js web applications",
-              "React Native & Flutter mobile apps",
-              "Web3 / DeFi UI development",
-              "UI system architecture & design systems",
-              "Performance optimization & audits",
+              "Scalable React / Next.js product interfaces",
+              "Cross-platform React Native & Flutter experiences",
+              "Clean, maintainable UI systems & frontend architecture",
+              "Web3-integrated product flows and wallet UX",
+              "Performance-focused, user-centric frontend delivery",
             ].map((item) => (
               <li key={item} className="flex items-center gap-2.5 text-sm text-zinc-400">
                 <span className="w-1 h-1 rounded-full bg-cyan-400 shrink-0" />
@@ -194,7 +192,7 @@ export function ContactSection() {
             </div>
             <div>
               <p className="text-xs text-zinc-600 mb-0.5">Response time</p>
-              <p className="text-sm font-medium text-white">Usually within 24 hours</p>
+              <p className="text-sm font-medium text-white">Typically responds within 24 hours</p>
             </div>
           </motion.div>
         </motion.div>
