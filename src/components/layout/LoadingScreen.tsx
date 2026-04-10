@@ -58,7 +58,7 @@ export function LoadingScreen() {
                 transition={{ duration: 1.5, repeat: Infinity }}
               >
                 <Image
-                  src="/ph.png"
+                  src="/ph.svg"
                   alt="Prakash H"
                   width={64}
                   height={64}

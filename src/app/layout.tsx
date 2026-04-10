@@ -39,14 +39,14 @@ export const metadata: Metadata = {
     description:
       "Building high-performance web & mobile products. React · Next.js · React Native · Web3.",
     siteName: "Prakash H Portfolio",
-    images: [{ url: "/ph.png" }],
+    images: [{ url: "/ph.svg" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Prakash H — Frontend Engineer",
     description:
       "Building high-performance web & mobile products. React · Next.js · React Native · Web3.",
-    images: ["/ph.png"],
+    images: ["/ph.svg"],
   },
   robots: {
     index: true,

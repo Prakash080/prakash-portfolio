@@ -14,12 +14,12 @@ export function Footer() {
     <footer className="border-t border-white/5 py-10 px-6">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-lg border border-cyan-500/30 overflow-hidden">
+          <div className="w-8 h-8 rounded-lg border border-cyan-500/30 overflow-hidden">
             <Image
-              src="/ph.png"
+              src="/ph.svg"
               alt="Prakash H"
-              width={28}
-              height={28}
+              width={32}
+              height={32}
               className="w-full h-full object-cover"
             />
           </div>

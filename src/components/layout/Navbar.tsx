@@ -76,7 +76,7 @@ export function Navbar() {
           >
             <div className="w-8 h-8 rounded-lg border border-cyan-500/40 overflow-hidden group-hover:border-cyan-500/80 transition-colors">
               <Image
-                src="/icon.svg"
+                src="/ph.svg"
                 alt="Prakash H"
                 width={32}
                 height={32}
