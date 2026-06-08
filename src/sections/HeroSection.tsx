@@ -24,13 +24,13 @@ function SpotlightCursor() {
 
   return (
     <motion.div
-      className="pointer-events-none fixed z-0 w-[500px] h-[500px] rounded-full opacity-[0.07]"
+      className="pointer-events-none fixed z-0 w-100 h-100 rounded-full opacity-[0.1]"
       style={{
         left: springX,
         top: springY,
         translateX: "-50%",
         translateY: "-50%",
-        background: "radial-gradient(circle, #6ee7f7 0%, transparent 70%)",
+        background: "radial-gradient(circle, #6ee7f7 0%, transparent 75%)",
       }}
     />
   );
@@ -145,7 +145,7 @@ function ProfileImage() {
           whileHover={{ y: -2 }}
         >
           <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-400 mb-0.5 sm:mb-1">Building Products</p>
-          <p className="text-sm sm:text-lg font-bold text-white leading-none">5+ <span className="text-cyan-400">Years</span></p>
+          <p className="text-sm sm:text-lg font-bold text-white leading-none">6+ <span className="text-cyan-400">Years</span></p>
           <p className="text-[9px] sm:text-[10px] text-zinc-400 mt-0.5">Frontend • Mobile • Web3</p>
         </motion.div>
       </div>

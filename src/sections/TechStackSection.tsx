@@ -139,7 +139,7 @@ export function TechStackSection() {
       {/* Stats bento */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-14">
         {[
-          { value: "5+", label: "Years experience", color: "#6ee7f7" },
+          { value: "6+", label: "Years experience", color: "#6ee7f7" },
           { value: "10+", label: "Tech mastered", color: "#818cf8" },
           { value: "5+", label: "Countries served", color: "#34d399" },
           { value: "∞", label: "UI patterns shipped", color: "#f59e0b" },

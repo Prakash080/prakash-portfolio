@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Prakash H — Frontend Engineer",
   description:
-    "Frontend Engineer with 5+ years of experience building high-performance web & mobile products — React, Next.js, React Native, Flutter, Web3.",
+    "Frontend Engineer with 6+ years of experience building high-performance web & mobile products — React, Next.js, React Native, Flutter, Web3.",
   keywords: [
     "Frontend Engineer",
     "React",

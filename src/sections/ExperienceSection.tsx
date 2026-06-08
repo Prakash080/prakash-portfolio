@@ -190,7 +190,7 @@ export function ExperienceSection() {
       <SectionHeader
         label="// 01 — work history"
         title="Where I've Built"
-        subtitle="5+ years of shipping global products across ride-hailing, Web3, and mobile platforms."
+        subtitle="6+ years of shipping global products across ride-hailing, Web3, and mobile platforms."
       />
 
       <div className="relative">

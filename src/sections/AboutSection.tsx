@@ -72,7 +72,7 @@ export function AboutSection() {
           </motion.p>
 
           <motion.p variants={fadeUp} className="text-zinc-500 leading-relaxed">
-            Over the last <span className="text-white">5+ years</span>, I&apos;ve worked across{" "}
+            Over the last <span className="text-white">6+ years</span>, I&apos;ve worked across{" "}
             <span className="text-white">mobility, Web3, and platform-based products</span> -
             building web and mobile experiences using React, Next.js, React Native, Flutter,
             TailwindCSS, and Zustand.
