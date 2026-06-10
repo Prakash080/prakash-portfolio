@@ -16,7 +16,9 @@ export const techStack: TechItem[] = [
   { name: "Dart", category: "mobile", level: "advanced", color: "#00b4ab" },
   // Web3
   { name: "Ethers.js", category: "web3", level: "advanced", color: "#6340bc" },
+  { name: "Wagmi", category: "web3", level: "advanced", color: "#8b5cf6" },
   { name: "MetaMask SDK", category: "web3", level: "advanced", color: "#f5841f" },
+  { name: "Coinbase Wallet", category: "web3", level: "advanced", color: "#0052ff" },
   { name: "WalletConnect", category: "web3", level: "advanced", color: "#3b99fc" },
   { name: "RainbowKit", category: "web3", level: "advanced", color: "#7c3aed" },
   { name: "NFT Systems", category: "web3", level: "proficient", color: "#a78bfa" },

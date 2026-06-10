@@ -2,6 +2,85 @@ import { Project, OtherWork } from "@/types";
 
 export const projects: Project[] = [
   {
+    id: "musubi",
+    title: "Musubi",
+    category: "Fintech + Web3 Platform",
+    summary:
+      "Built frontend experiences for a Japan-focused fintech and Web3 platform involving lending, digital assets, and token-enabled user journeys.",
+    featured: true,
+    status: "live",
+    gradient: "from-indigo-500/20 to-purple-600/20",
+    icon: "🔗",
+    tags: ["Next.js", "Web3", "Fintech", "Japan"],
+    liveUrl: "https://musubi.fi/",
+    metadata: {
+      role: "Front-end Engineer",
+      platform: "Web",
+      status: "Live",
+      extra: { label: "Market", value: "Japan" },
+    },
+    whatItIs:
+      "A Japan-focused fintech and Web3 product combining modern financial workflows with tokenized experiences, digital asset interactions, and secure user onboarding.",
+    whatIBuilt:
+      "Built and refined frontend experiences for lending-related workflows, digital asset views, token/NFT interactions, and responsive onboarding flows designed for trust and usability.",
+    keyWork: [
+      "Built lending and onboarding user flows",
+      "Worked on token-aware and wallet-connected UI interactions",
+      "Developed responsive interfaces for finance-oriented workflows",
+      "Improved trust-focused UX for digital asset users",
+    ],
+    engineeringHighlights: [
+      "Developed product UI using React / Next.js for complex finance-oriented flows",
+      "Worked on wallet-connected and token-aware user interfaces",
+      "Built responsive, structured UI systems for multi-step workflows",
+      "Focused on usability, accessibility, and clean interaction design",
+    ],
+    impact:
+      "Helped shape a production-ready fintech + Web3 experience tailored for the Japanese market with strong focus on usability and interface reliability.",
+    techStack: ["Next.js", "React", "TypeScript", "Ethers.js", "TailwindCSS", "Zustand"],
+    ctaLabel: "View Live",
+    ctaType: "link",
+  },
+  {
+    id: "ar-service",
+    title: "AR Service Platform",
+    category: "Fintech + Web3 Marketplace",
+    summary:
+      "Built marketplace, invoice management, fractional asset purchase, redemption, and NFT-backed ownership experiences for a fintech + Web3 platform.",
+    featured: true,
+    status: "live",
+    gradient: "from-pink-500/20 to-rose-600/20",
+    icon: "🧾",
+    tags: ["Fintech", "Web3", "Marketplace", "NFT"],
+    metadata: {
+      role: "Front-end Engineer",
+      platform: "Web",
+      status: "Live",
+      extra: { label: "Domain", value: "Fintech · Marketplace" },
+    },
+    whatItIs:
+      "A fintech and Web3 marketplace platform combining invoice management, fractional asset purchases, redemption workflows, and NFT-backed ownership experiences.",
+    whatIBuilt:
+      "Built marketplace and invoice management interfaces along with fractional purchase, redemption, and NFT-backed asset ownership workflows across the product.",
+    keyWork: [
+      "Built marketplace and invoice management interfaces",
+      "Worked on fractional asset purchase and redemption workflows",
+      "Developed NFT-backed ownership and asset experiences",
+      "Contributed reusable UI and product flows for fintech use cases",
+    ],
+    engineeringHighlights: [
+      "Built product UI for marketplace and asset-management workflows",
+      "Worked on wallet-connected and NFT-aware product interfaces",
+      "Developed multi-step fractional purchase and redemption flows",
+      "Focused on clarity and usability for finance-oriented interactions",
+    ],
+    impact:
+      "Contributed shipped marketplace and NFT-backed asset experiences for a production fintech + Web3 platform.",
+    techStack: ["Next.js", "React", "TypeScript", "Ethers.js", "TailwindCSS", "Zustand"],
+    ctaLabel: "Available on request",
+    ctaType: "label",
+  },
+  {
     id: "tada-rider",
     title: "TADA Rider App",
     category: "Ride-Hailing Platform",
@@ -79,46 +158,6 @@ export const projects: Project[] = [
       "Delivered reliable production interfaces supporting day-to-day driver operations across active ride-hailing markets.",
     techStack: ["React Native", "TailwindCSS", "Zustand", "REST APIs", "Firebase"],
     ctaLabel: "View on Play Store",
-    ctaType: "link",
-  },
-  {
-    id: "musubi",
-    title: "Musubi",
-    category: "Fintech + Web3 Platform",
-    summary:
-      "Built frontend experiences for a Japan-focused fintech and Web3 platform involving lending, digital assets, and token-enabled user journeys.",
-    featured: true,
-    status: "live",
-    gradient: "from-indigo-500/20 to-purple-600/20",
-    icon: "🔗",
-    tags: ["Next.js", "Web3", "Fintech", "Japan"],
-    liveUrl: "https://musubi.fi/",
-    metadata: {
-      role: "Front-end Engineer",
-      platform: "Web",
-      status: "Live",
-      extra: { label: "Market", value: "Japan" },
-    },
-    whatItIs:
-      "A Japan-focused fintech and Web3 product combining modern financial workflows with tokenized experiences, digital asset interactions, and secure user onboarding.",
-    whatIBuilt:
-      "Built and refined frontend experiences for lending-related workflows, digital asset views, token/NFT interactions, and responsive onboarding flows designed for trust and usability.",
-    keyWork: [
-      "Built lending and onboarding user flows",
-      "Worked on token-aware and wallet-connected UI interactions",
-      "Developed responsive interfaces for finance-oriented workflows",
-      "Improved trust-focused UX for digital asset users",
-    ],
-    engineeringHighlights: [
-      "Developed product UI using React / Next.js for complex finance-oriented flows",
-      "Worked on wallet-connected and token-aware user interfaces",
-      "Built responsive, structured UI systems for multi-step workflows",
-      "Focused on usability, accessibility, and clean interaction design",
-    ],
-    impact:
-      "Helped shape a production-ready fintech + Web3 experience tailored for the Japanese market with strong focus on usability and interface reliability.",
-    techStack: ["Next.js", "React", "TypeScript", "Ethers.js", "TailwindCSS", "Zustand"],
-    ctaLabel: "View Live",
     ctaType: "link",
   },
   {

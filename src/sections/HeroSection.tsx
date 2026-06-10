@@ -212,10 +212,11 @@ export function HeroSection() {
             <motion.div variants={fadeUp}>
               <p className="text-lg sm:text-xl text-zinc-300 leading-relaxed font-light">
                 Frontend Engineer building{" "}
-                <span className="text-white font-medium">high-performance</span> web &amp; mobile
-                products - from{" "}
-                <span className="text-cyan-400">ride-hailing platforms</span> to{" "}
-                <span className="text-indigo-400">Web3 ecosystems</span>.
+                <span className="text-white font-medium">high-performance </span> web &amp; mobile
+                products - across{" "}
+                <span className="text-cyan-400">fintech</span>,{" "}
+                <span className="text-indigo-400">Web3 marketplaces</span>, and{" "}
+                <span className="text-emerald-400">ride-hailing platforms</span>.
               </p>
             </motion.div>
 
