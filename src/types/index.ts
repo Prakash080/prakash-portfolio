@@ -46,7 +46,7 @@ export interface Experience {
 export interface TechItem {
   name: string;
   category: "frontend" | "mobile" | "web3" | "state" | "tooling" | "backend";
-  level: "expert" | "advanced" | "proficient";
+  // level: "expert" | "advanced" | "proficient";
   icon?: string;
   color: string;
 }

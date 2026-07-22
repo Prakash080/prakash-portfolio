@@ -7,7 +7,7 @@ import { ArrowRight, Download, Mail, MapPin, Zap, Globe } from "lucide-react";
 import { staggerContainer, fadeUp, textReveal } from "@/animations/variants";
 import { scrollToSection, RESUME_PATH } from "@/lib/utils";
 
-const SKILLS = ["React", "Next.js", "React Native", "Flutter", "TailwindCSS", "TypeScript", "Zustand", "Web3"];
+const SKILLS = ["React", "Next.js", "TypeScript", "TailwindCSS", "Zustand", "Web3", "React Native", "Flutter",];
 
 function SpotlightCursor() {
   const x = useMotionValue(0);
@@ -256,8 +256,8 @@ export function HeroSection() {
                     animate={{ opacity: 1, y: 0, scale: isActive ? 1.06 : 1 }}
                     transition={{
                       opacity: { delay: 0.6 + i * 0.07, duration: 0.35, ease: [0.22, 1, 0.36, 1] },
-                      y:       { delay: 0.6 + i * 0.07, duration: 0.35, ease: [0.22, 1, 0.36, 1] },
-                      scale:   { duration: 0.18, ease: "easeOut" },
+                      y: { delay: 0.6 + i * 0.07, duration: 0.35, ease: [0.22, 1, 0.36, 1] },
+                      scale: { duration: 0.18, ease: "easeOut" },
                     }}
                     whileHover={{ scale: 1.1 }}
                   >

@@ -16,7 +16,7 @@ const levelMap = {
 };
 
 function TechCard({ item }: { item: TechItem }) {
-  const level = levelMap[item.level];
+  // const level = levelMap[item.level];
   return (
     <motion.div
       variants={scaleIn}
@@ -28,7 +28,7 @@ function TechCard({ item }: { item: TechItem }) {
         {item.name}
       </span>
       {/* Proficiency bars */}
-      <div className="flex items-center gap-0.5">
+      {/* <div className="flex items-center gap-0.5">
         {[1, 2, 3].map((i) => (
           <div
             key={i}
@@ -38,7 +38,7 @@ function TechCard({ item }: { item: TechItem }) {
             )}
           />
         ))}
-      </div>
+      </div> */}
     </motion.div>
   );
 }
@@ -84,7 +84,7 @@ export function TechStackSection() {
       </div>
 
       {/* Proficiency legend */}
-      <div className="flex items-center gap-4 mb-8 text-xs text-zinc-600">
+      {/* <div className="flex items-center gap-4 mb-8 text-xs text-zinc-600">
         {Object.entries(levelMap).map(([key, val]) => (
           <div key={key} className="flex items-center gap-1.5">
             <div className="flex gap-0.5">
@@ -98,7 +98,7 @@ export function TechStackSection() {
             <span>{val.label}</span>
           </div>
         ))}
-      </div>
+      </div> */}
 
       {activeCategory === "all" ? (
         /* Grouped view */
