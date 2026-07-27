@@ -9,4 +9,4 @@ export function scrollToSection(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-export const RESUME_PATH = "/Prakash_H_Resume.pdf";
+export const RESUME_PATH = "/CV_Prakash_H_6Yrs.pdf";
